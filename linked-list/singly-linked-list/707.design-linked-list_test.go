@@ -1,7 +1,6 @@
 package singly_linked_list
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -176,40 +175,4 @@ func TestMyLinkedList_DeleteAtIndex(t *testing.T) {
 			assert.Equal(t, c.expectLength, linkedList.length)
 		})
 	}
-}
-
-type LinkedList struct {
-	head *Node
-}
-
-func TestConstructor(t *testing.T) {
-	l := new(LinkedList)
-l = AddAtHead(3, l)
-	l = AddAtHead(2, l)
-	l = AddAtHead(5, l)
-	printList(l)
-}
-
-func printList(l *LinkedList) {
-	current := l.head
-	for current != nil {
-		fmt.Printf("%v->", current.val)
-		current = current.next
-	}
-	fmt.Println()
-}
-
-func AddAtHead(val int, h *LinkedList) *LinkedList {
-	node := &Node{val, nil}
-	if h.head == nil {
-		h.head = node
-		return h
-	}
-
-	current := h.head
-	for current.next != nil {
-		current = current.next
-	}
-	current.next = node
-	return h
 }

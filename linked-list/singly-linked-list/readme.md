@@ -49,4 +49,4 @@ func AddAtTail(val int, h *LinkedList) *LinkedList {
 ### [Delete Operation](https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1289/)
 
 ## Problems
-* [Design Linked List](./707.design-linked-list.go)
+* [[707] Design Linked List](./707.design-linked-list.go)
