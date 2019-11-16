@@ -20,7 +20,7 @@ func TestGenLinkedList(t *testing.T) {
 	for _, c := range testTable {
 		t.Run(c.name, func(t *testing.T) {
 			node := GenLinkedList(c.input)
-			PrintLinkedList(node)
+			assert.Equal(t, len(c.input), GetLength(node))
 		})
 	}
 }

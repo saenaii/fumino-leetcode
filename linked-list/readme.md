@@ -4,4 +4,4 @@
 
 ## Index
 * [Singly Linked List](./singly-linked-list)
-
+* [Two Pointer](./two-pointer)

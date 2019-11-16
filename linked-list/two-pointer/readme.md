@@ -4,3 +4,4 @@
 ## Problems
 * [[141] linked-list-cycle](./141.linked-list-cycle.go)
 * [[142] linked-list-cycle2](./142.linked-list-cycle-ii.go)
+* [[160] intersection-of-two-linked-lists](./160.intersection-of-two-linked-lists.go)
