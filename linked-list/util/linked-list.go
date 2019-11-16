@@ -1,22 +1,19 @@
 package util
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type Node struct {
-	Val int
+	Val  int
 	Next *Node
 }
 
 const maxLoop = 30
 
 func GenLinkedList(arr []int) *Node {
-	head := &Node{}
-	current := head
-	for _, v := range arr {
-		current.Next = &Node{v, nil}
-		current = current.Next
-	}
-	return head.Next
+	return arrayToLinkedList(arr)
 }
 
 func LinkedListToArray(node *Node) []int {
@@ -45,13 +42,44 @@ func GenLinkedListWithCycle(arr []int, cycle int) *Node {
 	return head.Next
 }
 
+func GenIntersectionLinkedList(arr1, arr2, common []int) (*Node, *Node) {
+	if len(common) == 0 {
+		return arrayToLinkedList(arr1), arrayToLinkedList(arr2)
+	}
+
+	list1 := arrayToLinkedList(arr1)
+	list2 := arrayToLinkedList(arr2)
+	intersection := arrayToLinkedList(common)
+
+	last1, last2 := getLastNode(list1), getLastNode(list2)
+	last1.Next = intersection
+	last2.Next = intersection
+
+	return list1, list2
+}
+
+func GetLength(head *Node) int {
+	current := head
+	length := 0
+	for current != nil {
+		if length > maxLoop {
+			fmt.Printf("\n%s\n", "max loop exceed")
+			os.Exit(1)
+		}
+		length++
+		current = current.Next
+	}
+	return length
+}
+
 func PrintLinkedList(node *Node) {
 	format := "%v -> "
 	current := node
 	count := 0
 	for current != nil {
 		if count > maxLoop {
-			break
+			fmt.Printf("\n%s\n", "loop time exceed")
+			os.Exit(1)
 		}
 		if current.Next == nil {
 			format = "%v"
@@ -61,6 +89,24 @@ func PrintLinkedList(node *Node) {
 		count++
 	}
 	fmt.Println()
+}
+
+func arrayToLinkedList(arr []int) *Node {
+	head := &Node{}
+	current := head
+	for _, v := range arr {
+		current.Next = &Node{v, nil}
+		current = current.Next
+	}
+	return head.Next
+}
+
+func getLastNode(head *Node) *Node {
+	current := head
+	for current.Next != nil {
+		current = current.Next
+	}
+	return current
 }
 
 func getValByIndex(head *Node, index int) int {
@@ -76,4 +122,3 @@ func getValByIndex(head *Node, index int) int {
 	}
 	return current.Val
 }
-
