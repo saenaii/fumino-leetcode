@@ -6,3 +6,20 @@
 * [[141] linked-list-cycle](./141.linked-list-cycle.go)
 * [[142] linked-list-cycle2](./142.linked-list-cycle-ii.go)
 * [[160] intersection-of-two-linked-lists](./160.intersection-of-two-linked-lists.go)
+
+## Template
+```go
+slow, fast := head, head.Next
+for slow != nil && fast != nil && fast.Next != nil {
+    if slow == fast {
+        return true
+    }
+    slow = slow.Next
+    fast = fast.Next.Next
+}
+return false
+```
+
+## Tips
+1. Always examine if the node is null before you call next field.
+1. Carefully define the end of conditions of your loop.
