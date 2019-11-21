@@ -134,3 +134,41 @@ func TestGetLength(t *testing.T) {
 		})
 	}
 }
+
+func TestPrintLinkedList(t *testing.T) {
+	head := GenLinkedList([]int{1, 2, 3, 4, 5})
+	PrintLinkedList(head)
+}
+
+func TestGetValueByIndex(t *testing.T) {
+	testTable := []struct {
+		name   string
+		input  []int
+		index  int
+		expect int
+	}{
+		{
+			name:   "happy path",
+			input:  []int{1, 2, 3, 4, 5},
+			index:  2,
+			expect: 3,
+		}, {
+			name:   "get first element",
+			input:  []int{1, 2, 3},
+			index:  0,
+			expect: 1,
+		}, {
+			name:   "get last element",
+			input:  []int{1, 2, 3, 4, 5},
+			index:  4,
+			expect: 5,
+		},
+	}
+
+	for _, c := range testTable {
+		t.Run(c.name, func(t *testing.T) {
+			linkedList := GenLinkedList(c.input)
+			assert.Equal(t, c.expect, getValByIndex(linkedList, c.index))
+		})
+	}
+}
