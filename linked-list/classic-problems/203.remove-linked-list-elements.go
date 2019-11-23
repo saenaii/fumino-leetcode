@@ -10,10 +10,6 @@ import "fumino-leetcode/linked-list/util"
  * }
  */
 func removeElements(head *util.Node, val int) *util.Node {
-	if head == nil {
-		return head
-	}
-
 	newHead := &util.Node{0, head}
 	prev := newHead
 	for prev.Next != nil {
