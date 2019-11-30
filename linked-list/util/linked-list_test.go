@@ -162,6 +162,11 @@ func TestGetValueByIndex(t *testing.T) {
 			input:  []int{1, 2, 3, 4, 5},
 			index:  4,
 			expect: 5,
+		}, {
+			name:   "empty input",
+			input:  []int{},
+			index:  3,
+			expect: -1,
 		},
 	}
 
