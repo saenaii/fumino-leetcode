@@ -15,3 +15,8 @@ func TestMin(t *testing.T) {
 	assert.Equal(t, 1, min(1, 100))
 	assert.Equal(t, 1, min(100, 1))
 }
+
+func TestStringInSlice(t *testing.T) {
+	assert.Equal(t, true, stringInSlice([]string{"a", "b"}, "a"))
+	assert.Equal(t, false, stringInSlice([]string{"b"}, "a"))
+}
