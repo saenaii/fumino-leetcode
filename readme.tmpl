@@ -1,0 +1,6 @@
+# {{ .Title }}
+
+| index | name |
+|---|---|
+{{range .List}}|{{ .Index }}| [{{ .Name }}]({{.Link}})|
+{{end}}
