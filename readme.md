@@ -4,4 +4,4 @@
 
 ## Topic
 * [Linked List](./linked-list)
-* [Dynamic Programming](./dynamic-programming)
+* [Dynamic Programming](./dynamic-programming/readme.md)
