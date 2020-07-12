@@ -54,7 +54,7 @@ func genReadme(files []os.FileInfo) {
 	indexPattern := regexp.MustCompile(`(\d+)\.`)
 	namePattern := regexp.MustCompile(`\.([a-z_]+)\.go`)
 	for _, file := range files {
-		if readmeExists(file) {
+		if file.Name() == "linked-list" {
 			continue
 		}
 		var list problemList
@@ -78,20 +78,6 @@ func genReadme(files []os.FileInfo) {
 		})
 		genList(file.Name(), "./"+file.Name(), list)
 	}
-}
-
-func readmeExists(file os.FileInfo) bool {
-	fileList, err := ioutil.ReadDir(rootPath + file.Name())
-	if err != nil {
-		fmt.Println(err)
-		return false
-	}
-	for _, file := range fileList {
-		if strings.HasSuffix(strings.ToLower(file.Name()), "readme.md") {
-			return true
-		}
-	}
-	return false
 }
 
 func genList(title, filePath string, list problemList) {

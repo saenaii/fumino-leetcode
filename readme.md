@@ -4,3 +4,4 @@
 
 ## Topic
 * [Linked List](./linked-list)
+* [Dynamic Programming](./dynamic-programming)

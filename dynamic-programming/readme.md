@@ -19,3 +19,4 @@
 |221| [maximal square](221.maximal_square.go)|
 |264| [ugly number ii](264.ugly_number_ii.go)|
 |279| [perfect squares](279.perfect_squares.go)|
+|300| [longest increasing subsequence](300.longest_increasing_subsequence.go)|
