@@ -21,3 +21,4 @@
 |279| [perfect squares](279.perfect_squares.go)|
 |300| [longest increasing subsequence](300.longest_increasing_subsequence.go)|
 |303| [range num query](303.range_num_query.go)|
+|304| [range sum query 2d immutable](304.range_sum_query_2d_immutable.go)|

@@ -52,7 +52,7 @@ func getFileList() []os.FileInfo {
 
 func genReadme(files []os.FileInfo) {
 	indexPattern := regexp.MustCompile(`(\d+)\.`)
-	namePattern := regexp.MustCompile(`\.([a-z_]+)\.go`)
+	namePattern := regexp.MustCompile(`\.([a-z1-9_]+)\.go`)
 	for _, file := range files {
 		if file.Name() == "linked-list" {
 			continue
